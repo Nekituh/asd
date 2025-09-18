@@ -2,45 +2,127 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi niña bonita 💖</title>
+  <title>Mi niña bonita</title>
   <style>
     body {
-      background-color: #ffe6f0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background: black; /* Fondo base */
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Fondo con estrellas */
+    .stars {
+      width: 100%;
+      height: 100%;
+      background: black url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      position: fixed;
+      top: 0;
+      left: 0;
+      animation: moveStars 200s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: -10000px 5000px; }
+    }
+
+    h1 {
+      color: #ff66b2;
+      font-size: 3em;
+      margin-top: 20px;
+      text-shadow: 2px 2px 10px #ff99cc;
+    }
+
+    .container {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: Arial, sans-serif;
+      margin-top: 40px;
     }
-    .contenedor {
-      position: relative;
-      display: inline-block;
+
+    .flowers {
+      font-size: 3em;
+      margin: 0 20px;
     }
-    img {
-      border-radius: 50%;
-      border: 5px solid pink;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-      width: 300px;
-      height: 300px;
+
+    .photo {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%; /* Foto circular */
       object-fit: cover;
+      box-shadow: 0 0 25px #ff66b2; /* Brillo */
     }
-    .texto {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 28px;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+
+    /* Galería de 3 fotos */
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 60px;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 15px #ff99cc;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #ff4da6;
+    }
+
+    /* Foto única debajo */
+    .single-photo {
+      margin-top: 50px;
+    }
+
+    .single-photo img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 20px #ff99cc;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .single-photo img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 35px #ff4da6;
     }
   </style>
 </head>
 <body>
-  <div class="contenedor">
-    <img src="carita.jpg" alt="Mi amor">
-    <div class="texto">Mi niña bonita 💕</div>
+  <div class="stars"></div> <!-- 🌌 Fondo estrellado -->
+  <h1>💖 Mi niña bonita 💖</h1>
+  <div class="container">
+    <div class="flowers">🌸🌸🌸</div>
+    <img src="carita.jpg" alt="A esta niña golosa la aguanto >;c pd: te amo uu" class="photo">
+    <div class="flowers">🌸🌸🌸</div>
+  </div>
+
+  <!-- 📷 Galería con 3 fotos -->
+  <div class="gallery">
+    <img src="foto1.jpg" alt="Foto 2">
+    <img src="foto2.jpg" alt="Foto 3">
+    <img src="foto3.jpg" alt="Foto 4">
+  </div>
+
+  <!-- 📷 Foto única debajo -->
+  <div class="single-photo">
+    <img src="foto4.jpg" alt="Foto 5">
   </div>
 </body>
 </html>
